@@ -3,10 +3,11 @@ import { Metadata, Viewport } from "next";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 
+import React from "react";
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
+import { ComicNeueStatic } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
@@ -34,11 +35,13 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <head />
+      <head>
+        <title>Rick Lionel Onana</title>
+      </head>
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
+          ComicNeueStatic.className,
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>

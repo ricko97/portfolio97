@@ -1,27 +1,29 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Rick Lionel ONANA",
+  description: "Junior Android, IOs & Fullstack Developer",
+  intro:
+    "I’m a motivated junior developer focused on creating mobile apps for Android and iOS, as well as working on full-stack web development. Over the past few years, I’ve gained experience in building easy-to-use mobile apps and developing strong backend systems to support web applications.",
   navItems: [
     {
       label: "Home",
       href: "/",
     },
     {
-      label: "Docs",
+      label: "Education",
       href: "/docs",
     },
     {
-      label: "Pricing",
+      label: "Experience",
       href: "/pricing",
     },
     {
-      label: "Blog",
+      label: "Skills",
       href: "/blog",
     },
     {
-      label: "About",
+      label: "Contact",
       href: "/about",
     },
   ],
@@ -60,10 +62,89 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/nextui-org/nextui",
-    twitter: "https://twitter.com/getnextui",
-    docs: "https://nextui.org",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    github: "https://github.com/ricko97",
+    linkedin: "https://www.linkedin.com/in/rlo/",
   },
+  techs: [
+    {
+      name: "Vue.js",
+      image: "/img/techs/vue-js.svg",
+      active: true,
+    },
+    {
+      name: "React",
+      image: "/img/techs/react.svg",
+      active: true,
+    },
+    {
+      name: "Next.js",
+      image: "/img/techs/next-js.svg",
+      active: true,
+    },
+    {
+      name: "Ionic",
+      image: "/img/techs/ionic.svg",
+      active: true,
+    },
+    {
+      name: "Android Studio",
+      image: "/img/techs/android-studio.svg",
+      active: true,
+    },
+    {
+      name: "Xcode",
+      image: "/img/techs/xcode.svg",
+      active: true,
+    },
+    {
+      name: "Node.js",
+      image: "/img/techs/node-js.svg",
+      active: true,
+    },
+    {
+      name: "Spring Boot",
+      image: "/img/techs/spring.svg",
+      active: true,
+    },
+    {
+      name: "Javascript",
+      image: "/img/techs/javascript.svg",
+      active: false,
+    },
+    {
+      name: "Typescript",
+      image: "/img/techs/typescript.svg",
+      active: false,
+    },
+    {
+      name: "MongoDB",
+      image: "/img/techs/mongodb.svg",
+      active: true,
+    },
+    {
+      name: "MySQL",
+      image: "/img/techs/mysql.svg",
+      active: true,
+    },
+    {
+      name: "PHP",
+      image: "/img/techs/php.svg",
+      active: true,
+    },
+    {
+      name: "Git",
+      image: "/img/techs/git.svg",
+      active: true,
+    },
+    {
+      name: "Figma",
+      image: "/img/techs/figma.png",
+      active: true,
+    },
+    {
+      name: "OWASP",
+      image: "/img/techs/owasp.webp",
+      active: true,
+    },
+  ],
 };

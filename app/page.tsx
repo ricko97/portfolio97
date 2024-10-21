@@ -1,56 +1,77 @@
-import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-
-import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
+import { IconArrowRightThick } from "@/components/icons";
+import { Button } from "@nextui-org/button";
+import Image from "next/image";
+import { Divider } from "@nextui-org/divider";
+import { siteConfig } from "@/config/site";
+import { Card, CardFooter } from "@nextui-org/card";
+import clsx from "clsx";
 
 export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-      <div className="inline-block max-w-xl text-center justify-center">
-        <span className={title()}>Make&nbsp;</span>
-        <span className={title({ color: "violet" })}>beautiful&nbsp;</span>
-        <br />
-        <span className={title()}>
-          websites regardless of your design experience.
-        </span>
-        <div className={subtitle({ class: "mt-4" })}>
-          Beautiful, fast and modern React UI library.
+      <section className="flex max-sm:flex-col flex-row justify-between max-sm:gap-12 lg:gap-32 px-4">
+        <div className="flex flex-col">
+          <span className={title({ color: "blue" })}>{siteConfig.name}</span>
+          <div className={subtitle({ class: "mt-4" })}>{siteConfig.intro}</div>
+          <Button
+            className={"mt-4 text-xl md:w-2/3 lg:w-1/3"}
+            color="primary"
+            endContent={<IconArrowRightThick />}
+            fullWidth={false}
+            variant="shadow"
+          >
+            Let&#39;s get started
+          </Button>
         </div>
+        <Image
+          alt={"Rick Lionel Onana"}
+          className={"rounded-full shadow-inner-xl"}
+          height={250}
+          src={"/img/me.jpeg"}
+          width={300}
+        ></Image>
+      </section>
+      <div
+        className={
+          "flex flex-row gap-8 items-center text-nowrap self-start my-8 w-full px-4"
+        }
+      >
+        <Divider className={"w-2/3"} orientation={"horizontal"} />
+        <span className={`${title({ color: "cyan", size: "sm" })}`}>
+          My Stack
+        </span>
       </div>
 
-      <div className="flex gap-3">
-        <Link
-          isExternal
-          className={buttonStyles({
-            color: "primary",
-            radius: "full",
-            variant: "shadow",
+      <section className={"flex flex-col justify-between gap-8 items-start"}>
+        <div className={"flex justify-center gap-8 flex-wrap"}>
+          {siteConfig.techs.map((tech) => {
+            return (
+              <Card
+                key={tech.name}
+                isFooterBlurred
+                className={clsx("p-4", {
+                  hidden: !tech.active,
+                })}
+                radius="lg"
+              >
+                <Image
+                  alt={tech.name}
+                  className="object-cover"
+                  height={100}
+                  src={tech.image}
+                  width={100}
+                />
+                <CardFooter className="justify-center before:bg-white/10 border-white/20 border-1 py-1 absolute before:rounded-xl rounded-large bottom-0 left-0 shadow-small z-10">
+                  <p className="text-md dark:text-white font-bold accent-gray-900">
+                    {tech.name}
+                  </p>
+                </CardFooter>
+              </Card>
+            );
           })}
-          href={siteConfig.links.docs}
-        >
-          Documentation
-        </Link>
-        <Link
-          isExternal
-          className={buttonStyles({ variant: "bordered", radius: "full" })}
-          href={siteConfig.links.github}
-        >
-          <GithubIcon size={20} />
-          GitHub
-        </Link>
-      </div>
-
-      <div className="mt-8">
-        <Snippet hideCopyButton hideSymbol variant="bordered">
-          <span>
-            Get started by editing <Code color="primary">app/page.tsx</Code>
-          </span>
-        </Snippet>
-      </div>
+        </div>
+      </section>
     </section>
   );
 }
