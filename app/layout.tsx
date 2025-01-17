@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head>
-        <title>Rick Lionel Onana</title>
+        <title>{siteConfig.name}</title>
       </head>
       <body
         className={clsx(

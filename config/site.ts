@@ -67,7 +67,7 @@ export const siteConfig = {
   },
   techs: [
     {
-      name: "Vue.js",
+      name: "Vue",
       image: "/img/techs/vue-js.svg",
       active: true,
     },
