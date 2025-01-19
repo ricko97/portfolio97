@@ -1,8 +1,14 @@
 export const resumeData = {
   education: [
     {
+      id: 1,
       school: "Ahuntsic College",
-      logo: "/logo/ahuntsic.png",
+      school_long: "Ahuntsic College",
+      logo: {
+        image: "/logo/ahuntsic.png",
+        width: 120,
+        height: 25,
+      },
       website: "https://www.collegeahuntsic.qc.ca",
       start_date: "2024-01-20",
       end_date: "2025-01-20",
@@ -13,11 +19,18 @@ export const resumeData = {
       description:
         "One year intensive program focused on developing native and hybrid mobile apps",
       skills: ["Ionic", "Android Studio", "Swift/Xcode", "Vue"],
+      location: "Montréal, Canada",
       media: [],
     },
     {
+      id: 2,
       school: "ESPRIT",
-      logo: "/logo/esprit.png",
+      school_long: "École Supérieure Privée d'Ingénierie et de Technologies",
+      logo: {
+        image: "/logo/esprit.png",
+        width: 90,
+        height: 45,
+      },
       website: "https://esprit.tn",
       start_date: "2017-10-01",
       end_date: "2020-08-01",
@@ -26,8 +39,31 @@ export const resumeData = {
       minor: "Network, Infrastructure & Data Security",
       grade: "",
       description:
-        "One year intensive program focused on developing native and hybrid mobile apps",
+        "Trains students in programming, algorithms, and software design",
       skills: ["Java EE", "Android Studio", "Swift/Xcode", "Vue"],
+      location: "Tunis, Tunisia",
+      media: [],
+    },
+    {
+      id: 3,
+      school: "École Supérieure de Gestion",
+      school_long: "École Supérieure de Gestion",
+      logo: {
+        image: "/logo/esg.png",
+        width: 70,
+        height: 40,
+      },
+      website: "https://univ-iug.com",
+      start_date: "2015-10-01",
+      end_date: "2017-06-01",
+      diploma: "Bachelor's degree",
+      major: "Information Systems Management",
+      minor: "",
+      grade: "",
+      description:
+        "Develops IT experts focused on infrastructure and optimizing equipment",
+      skills: ["Java EE", "Android Studio", "Swift/Xcode", "Vue"],
+      location: "Douala, Cameroon",
       media: [],
     },
   ],
