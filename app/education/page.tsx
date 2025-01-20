@@ -1,5 +1,7 @@
 "use client";
 
+import type { Selection } from "@react-types/shared";
+
 import React from "react";
 import {
   Card,
@@ -17,7 +19,9 @@ import { resumeData } from "@/config/resume";
 import { formatMonthYear } from "@/config/utils";
 
 export default function DocsPage() {
-  const [selectedKeys, setSelectedKeys] = React.useState(new Set(["1"]));
+  const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
+    new Set(["1"]),
+  );
   const selectedValue = React.useMemo(
     () => Array.from(selectedKeys).join(", "),
     [selectedKeys],
@@ -26,7 +30,6 @@ export default function DocsPage() {
     .filter((x) => x.id == selectedValue)
     .at(0);
 
-  // @ts-ignore
   return (
     <div className="grid md:grid-cols-3 max-sm:grid-rows-2 gap-16 w-full">
       <div className="w-fullmax-w-[400px] px-1">
