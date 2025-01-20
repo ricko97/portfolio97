@@ -1,11 +1,13 @@
+"use client";
+
+import React from "react";
+import { Button, Card, CardFooter, Divider, Image } from "@heroui/react";
+import clsx from "clsx";
+
 import { title, subtitle } from "@/components/primitives";
 import { IconArrowRightThick } from "@/components/icons";
-import { Button } from "@nextui-org/button";
-import Image from "next/image";
-import { Divider } from "@nextui-org/divider";
 import { siteConfig } from "@/config/site";
-import { Card, CardFooter } from "@nextui-org/card";
-import clsx from "clsx";
+import NextLink from "next/link";
 
 export default function Home() {
   return (
@@ -21,7 +23,7 @@ export default function Home() {
             fullWidth={false}
             variant="shadow"
           >
-            Let&#39;s get started
+            <NextLink href={"/education"}>Let&#39;s get started</NextLink>
           </Button>
         </div>
         <Image
@@ -29,8 +31,8 @@ export default function Home() {
           className={"rounded-full shadow-inner-xl"}
           height={250}
           src={"/img/me.jpeg"}
-          width={300}
-        ></Image>
+          width={750}
+        />
       </section>
       <div
         className={

@@ -1,19 +1,19 @@
 "use client";
 
-import { Listbox, ListboxItem } from "@nextui-org/listbox";
-
-import { resumeData } from "@/config/resume";
-
+import React from "react";
 import {
   Card,
   CardBody,
   CardFooter,
   CardHeader,
+  Divider,
+  Link,
+  Listbox,
+  ListboxItem,
   Image,
-} from "@nextui-org/react";
-import { Divider } from "@nextui-org/divider";
-import { Link } from "@nextui-org/link";
-import React from "react";
+} from "@heroui/react";
+
+import { resumeData } from "@/config/resume";
 import { formatMonthYear } from "@/config/utils";
 
 export default function DocsPage() {
@@ -40,7 +40,7 @@ export default function DocsPage() {
         >
           {(item) => (
             <ListboxItem key={item.id} className={"items-start"}>
-              <Card shadow="sm" radius={"sm"}>
+              <Card radius={"sm"} shadow="md">
                 <CardHeader className="flex gap-3">
                   <Image
                     alt={item.school}
