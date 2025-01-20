@@ -23,9 +23,10 @@ export default function DocsPage() {
     [selectedKeys],
   );
   const currentSchool = resumeData.education
-    .filter((x) => x.id.toString() == selectedValue)
+    .filter((x) => x.id == selectedValue)
     .at(0);
 
+  // @ts-ignore
   return (
     <div className="grid md:grid-cols-3 max-sm:grid-rows-2 gap-16 w-full">
       <div className="w-fullmax-w-[400px] px-1">

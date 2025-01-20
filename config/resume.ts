@@ -1,7 +1,7 @@
 export const resumeData = {
   education: [
     {
-      id: 1,
+      id: "1",
       school: "Ahuntsic College",
       school_long: "Ahuntsic College",
       logo: {
@@ -23,7 +23,7 @@ export const resumeData = {
       media: [],
     },
     {
-      id: 2,
+      id: "2",
       school: "ESPRIT",
       school_long: "École Supérieure Privée d'Ingénierie et de Technologies",
       logo: {
@@ -45,7 +45,7 @@ export const resumeData = {
       media: [],
     },
     {
-      id: 3,
+      id: "3",
       school: "École Supérieure de Gestion",
       school_long: "École Supérieure de Gestion",
       logo: {
