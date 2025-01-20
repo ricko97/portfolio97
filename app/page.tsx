@@ -36,10 +36,10 @@ export default function Home() {
       </section>
       <div
         className={
-          "flex flex-row gap-8 items-center text-nowrap self-start my-8 w-full px-4"
+          "flex flex-row gap-8 justify-end items-center text-nowrap self-start my-8 w-full px-4"
         }
       >
-        <Divider className={"w-2/3"} orientation={"horizontal"} />
+        <Divider className={"w-1/3"} orientation={"horizontal"} />
         <span className={`${title({ color: "cyan", size: "sm" })}`}>
           My Stack
         </span>
