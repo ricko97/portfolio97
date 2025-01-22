@@ -5,9 +5,9 @@ export const resumeData = {
       school: "Ahuntsic College",
       school_long: "Ahuntsic College",
       logo: {
-        image: "/logo/ahuntsic.png",
-        width: 120,
-        height: 25,
+        image: "/logo/ahuntsic_2.png",
+        width: 140,
+        height: 30,
       },
       website: "https://www.collegeahuntsic.qc.ca",
       start_date: "2024-01-20",
@@ -17,7 +17,10 @@ export const resumeData = {
       minor: "",
       grade: "",
       description:
-        "One year intensive program focused on developing native and hybrid mobile apps",
+        "Intensive one-year program focused on the development of native and hybrid mobile applications. " +
+        "I learned and practiced several front-end frameworks and technologies in order to create " +
+        "progressive and mobile applications. These studies brought me up to date on current technologies and " +
+        "introduced me to mobile development, a sector I'm very passionate about.",
       skills: ["Ionic", "Android Studio", "Swift/Xcode", "Vue"],
       location: "Montréal, Canada",
       media: [],
@@ -39,7 +42,11 @@ export const resumeData = {
       minor: "Network, Infrastructure & Data Security",
       grade: "",
       description:
-        "Trains students in programming, algorithms, and software design",
+        "It was the most important studies I did because it introduced me to software engineering. " +
+        "It was a three-year program focusing mainly on application development (desktop and web), " +
+        "with an emphasis on infrastructure, network and data security. At the end of this program, " +
+        "I was able to understand several important aspects of software development, such as data modeling, " +
+        "object oriented and frameworks.",
       skills: ["Java EE", "Android Studio", "Swift/Xcode", "Vue"],
       location: "Tunis, Tunisia",
       media: [],
@@ -61,7 +68,8 @@ export const resumeData = {
       minor: "",
       grade: "",
       description:
-        "Develops IT experts focused on infrastructure and optimizing equipment",
+        "My very first IT program equipped me with important IT and management skills. I learned algorithms and how to write my " +
+        "first lines of code. I was also introduced to relational databases, operating systems and computer networks.",
       skills: ["Java EE", "Android Studio", "Swift/Xcode", "Vue"],
       location: "Douala, Cameroon",
       media: [],

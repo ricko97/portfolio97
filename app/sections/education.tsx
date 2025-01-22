@@ -14,11 +14,14 @@ import {
   ListboxItem,
   Image,
 } from "@heroui/react";
+import { MdLocationOn } from "react-icons/md";
+import { HiInformationCircle } from "react-icons/hi2";
+import { FaUserGraduate } from "react-icons/fa6";
 
-import { resumeData } from "@/config/resume";
 import { formatMonthYear } from "@/config/utils";
+import { resumeData } from "@/config/resume";
 
-export default function DocsPage() {
+export default function Education() {
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
     new Set(["1"]),
   );
@@ -31,8 +34,11 @@ export default function DocsPage() {
     .at(0);
 
   return (
-    <div className="grid md:grid-cols-3 max-sm:grid-rows-2 gap-16 w-full">
-      <div className="w-fullmax-w-[400px] px-1">
+    <section
+      className="grid md:grid-cols-3 max-sm:grid-rows-2 gap-16 w-full"
+      id="education"
+    >
+      <section className="w-fullmax-w-[400px] px-1">
         <Listbox
           disallowEmptySelection
           aria-label="Dynamic Actions"
@@ -48,6 +54,7 @@ export default function DocsPage() {
                 <CardHeader className="flex gap-3">
                   <Image
                     alt={item.school}
+                    className="object-cover"
                     height={item.logo.height}
                     radius="sm"
                     src={item.logo.image}
@@ -59,10 +66,6 @@ export default function DocsPage() {
                   </div>
                 </CardHeader>
                 <Divider />
-                <CardBody>
-                  <p>{item.description}</p>
-                </CardBody>
-                <Divider />
                 <CardFooter>
                   <Link isExternal showAnchorIcon href={item.website}>
                     {`Visit ${item.school}`}
@@ -72,12 +75,42 @@ export default function DocsPage() {
             </ListboxItem>
           )}
         </Listbox>
-      </div>
-      <div className="md:col-span-2 flex-col items-start">
-        <h1 className="text-4xl font-extrabold">
-          {currentSchool!.school_long}
-        </h1>
-      </div>
-    </div>
+      </section>
+      <section className="md:col-span-2 flex-col items-start ps-1">
+        <div className="flex flex-col gap-12">
+          <div className="flex flex-col">
+            <span className="text-4xl font-extrabold">
+              {currentSchool!.school_long}
+            </span>
+            <span className="flex flex-row items-center">
+              <MdLocationOn className="text-lg text-default-500" />
+              <p className="text-lg text-default-500">
+                {currentSchool!.location}
+              </p>
+            </span>
+          </div>
+          <div className="flex flex-row">
+            <Card
+              isBlurred
+              className="border-none bg-background/60 dark:bg-default-100/50 max-w-[610px]"
+              shadow="sm"
+            >
+              <CardBody>
+                <FaUserGraduate className="text-8xl" />
+              </CardBody>
+            </Card>
+          </div>
+          <div className="flex flex-col gap-3">
+            <span className="text-xl font-bold flex flex-row items-center">
+              <HiInformationCircle />
+              &nbsp;About this program
+            </span>
+            <p className="text-medium text-justify">
+              {currentSchool!.description}
+            </p>
+          </div>
+        </div>
+      </section>
+    </section>
   );
 }

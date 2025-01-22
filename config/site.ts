@@ -8,11 +8,11 @@ export const siteConfig = {
   navItems: [
     {
       label: "Home",
-      href: "/",
+      href: "#me",
     },
     {
       label: "Education",
-      href: "/education",
+      href: "#education",
     },
     {
       label: "Experience",
