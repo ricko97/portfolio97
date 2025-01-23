@@ -35,7 +35,7 @@ export default function Education() {
 
   return (
     <section
-      className="grid md:grid-cols-3 max-sm:grid-rows-2 gap-16 w-full"
+      className="grid md:grid-cols-3 max-sm:grid-rows-2 gap-16 w-full py-16"
       id="education"
     >
       <section className="w-fullmax-w-[400px] px-1">

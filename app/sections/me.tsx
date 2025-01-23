@@ -2,7 +2,6 @@
 
 import React, { useEffect } from "react";
 import { Button, Card, CardFooter, Divider, Image } from "@heroui/react";
-import clsx from "clsx";
 import NextLink from "next/link";
 import { motion } from "motion/react";
 import { useAnimation } from "framer-motion";
@@ -20,12 +19,12 @@ export default function Me() {
 
   return (
     <section
-      className="flex flex-col items-center justify-center gap-4 py-8 md:py-10"
+      className="flex flex-col items-center justify-center gap-4 pt-8 md:pt-10"
       id="me"
     >
-      <motion.section
+      <motion.div
         animate={mainControls}
-        className="flex max-sm:flex-col flex-row items-center justify-between max-sm:gap-8 md:gap-16 lg:gap-16 px-4"
+        className="flex max-sm:flex-col flex-row items-center justify-between max-sm:gap-8 md:gap-16 lg:gap-16"
         initial="hidden"
         transition={{
           type: "spring",
@@ -38,9 +37,11 @@ export default function Me() {
           visible: { opacity: 1, y: 0 },
         }}
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col self-start w-full">
           <span className={title({ color: "blue" })}>{siteConfig.name}</span>
-          <div className={subtitle({ class: "mt-4" })}>{siteConfig.intro}</div>
+          <span className={subtitle({ class: "mt-4 text-justify" })}>
+            {siteConfig.intro}
+          </span>
           <Button
             className={"mt-4 text-xl md:w-2/3 lg:w-1/3"}
             color="primary"
@@ -56,7 +57,7 @@ export default function Me() {
           className="rounded-full shadow-inner-xl max-sm:hidden"
           height="auto"
           src={"/img/me.jpeg"}
-          width={900}
+          width={500}
         />
         <Image
           alt={"Rick Lionel Onana"}
@@ -65,55 +66,16 @@ export default function Me() {
           src={"/img/me.jpeg"}
           width={300}
         />
-      </motion.section>
+      </motion.div>
       <div
         className={
-          "flex flex-row gap-8 justify-end items-center text-nowrap self-start my-8 w-full px-4"
+          "flex flex-row gap-8 justify-end items-center text-nowrap self-start mt-8 w-full px-4"
         }
       >
         <Divider className={"w-1/3"} orientation={"horizontal"} />
         <span className={`${title({ color: "cyan", size: "sm" })}`}>
           My Stack
         </span>
-      </div>
-
-      <div
-        className={
-          "flex flex-row justify-center flex-wrap gap-3 overflow-x-hidden"
-        }
-      >
-        {siteConfig.techs.map((tech) => {
-          return (
-            <motion.div
-              key={tech.name}
-              animate={{ x: -50 }}
-              initial={{ x: 0 }}
-              transition={{ duration: 3, ease: "linear", repeat: Infinity }}
-              className="inline-block w-auto"
-            >
-              <Card
-                isFooterBlurred
-                className={clsx("p-4", {
-                  hidden: !tech.active,
-                })}
-                radius="lg"
-              >
-                <Image
-                  alt={tech.name}
-                  className="object-fill"
-                  height={100}
-                  src={tech.image}
-                  width={100}
-                />
-                <CardFooter className="justify-center before:bg-white/10 border-white/20 border-1 py-1 absolute before:rounded-xl rounded-large bottom-0 left-0 shadow-small z-10">
-                  <p className="text-md dark:text-white font-bold accent-gray-900">
-                    {tech.name}
-                  </p>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          );
-        })}
       </div>
     </section>
   );
