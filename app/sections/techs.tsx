@@ -1,10 +1,16 @@
-import { siteConfig } from "@/config/site";
+"use client";
+
 import { motion } from "motion/react";
 import { Card, CardFooter, Image } from "@heroui/react";
 import React from "react";
 
+import { siteConfig } from "@/config/site";
+import useViewportSize from "@/hooks/useViewportSize";
+
 export default function Techs() {
   const nbTechs = siteConfig.techs.filter((e) => e.active).length;
+
+  const windowSize = useViewportSize();
 
   return (
     <div className="flex gap-3 flex-row flex-nowrap whitespace-nowrap m-0 p-0">
@@ -16,7 +22,7 @@ export default function Techs() {
               key={tech.name}
               animate={{
                 x: [
-                  (window.innerWidth + 8 * nbTechs).toString() + "px",
+                  (windowSize.width + 2 * nbTechs).toString() + "px",
                   (nbTechs * -145).toString() + "px",
                 ],
               }}

@@ -24,6 +24,7 @@ export const resumeData = {
       skills: ["Ionic", "Android Studio", "Swift/Xcode", "Vue"],
       location: "Montréal, Canada",
       media: [],
+      graduated: false,
     },
     {
       id: "2",
@@ -37,7 +38,7 @@ export const resumeData = {
       website: "https://esprit.tn",
       start_date: "2017-10-01",
       end_date: "2020-08-01",
-      diploma: "Engineering degree",
+      diploma: "Engineering Degree",
       major: "Software Engineering",
       minor: "Network, Infrastructure & Data Security",
       grade: "",
@@ -50,6 +51,7 @@ export const resumeData = {
       skills: ["Java EE", "Android Studio", "Swift/Xcode", "Vue"],
       location: "Tunis, Tunisia",
       media: [],
+      graduated: true,
     },
     {
       id: "3",
@@ -63,7 +65,7 @@ export const resumeData = {
       website: "https://univ-iug.com",
       start_date: "2015-10-01",
       end_date: "2017-06-01",
-      diploma: "Bachelor's degree",
+      diploma: "Bachelor's Degree",
       major: "Information Systems Management",
       minor: "",
       grade: "",
@@ -73,6 +75,7 @@ export const resumeData = {
       skills: ["Java EE", "Android Studio", "Swift/Xcode", "Vue"],
       location: "Douala, Cameroon",
       media: [],
+      graduated: true,
     },
   ],
 };

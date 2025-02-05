@@ -8,45 +8,45 @@ export const siteConfig = {
   navItems: [
     {
       label: "Home",
-      href: "#me",
+      href: "/#",
     },
     {
       label: "Education",
-      href: "#education",
+      href: "/#education",
     },
     {
       label: "Experience",
-      href: "/pricing",
+      href: "/#experience",
     },
     {
       label: "Skills",
-      href: "/blog",
+      href: "/#skills",
     },
     {
       label: "Contact",
-      href: "/about",
+      href: "/#contact",
     },
   ],
   navMenuItems: [
     {
       label: "Home",
-      href: "/",
+      href: "/#",
     },
     {
       label: "Education",
-      href: "/education",
+      href: "/#education",
     },
     {
       label: "Experience",
-      href: "/pricing",
+      href: "/#experience",
     },
     {
       label: "Skills",
-      href: "/blog",
+      href: "/#skills",
     },
     {
       label: "Contact",
-      href: "/about",
+      href: "/#contact",
     },
   ],
   links: {
