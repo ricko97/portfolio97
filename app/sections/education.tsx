@@ -17,14 +17,12 @@ import {
 import { MdLocationOn } from "react-icons/md";
 import { HiInformationCircle } from "react-icons/hi2";
 import { FaCircleCheck, FaClock, FaUserGraduate } from "react-icons/fa6";
-import { animate, hover } from "motion";
 import { motion } from "framer-motion";
-
-import { formatMonthYear } from "@/config/utils";
-import { resumeData } from "@/config/resume";
 import clsx from "clsx";
 import { Chip } from "@heroui/chip";
-import { CheckIcon } from "@heroui/shared-icons";
+
+import { resumeData } from "@/config/resume";
+import { formatMonthYear } from "@/config/utils";
 
 export default function Education() {
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
@@ -38,10 +36,15 @@ export default function Education() {
 
   return (
     <section
-      className="grid md:grid-cols-3 max-sm:grid-rows-2 gap-16 w-full py-16"
+      className="grid md:max-2xl:grid-cols-5 max-md:gap-8 max-md:grid-rows-1 w-full md:max-2xl:gap-16 md:max-2xl:py-16"
       id="education"
     >
-      <section className="px-1">
+      <motion.div
+        className="px-1 md:max-2xl:col-span-2 h-fit"
+        initial={{ opacity: 0, x: -50 }}
+        transition={{ duration: 0.5 }}
+        whileInView={{ opacity: 1, x: 0 }}
+      >
         <Listbox
           disallowEmptySelection
           aria-label="Dynamic Actions"
@@ -55,7 +58,7 @@ export default function Education() {
             <ListboxItem key={item.id} className={"items-start"}>
               <motion.div
                 whileHover={{
-                  scale: 1.08,
+                  scale: 1.05,
                   transition: { type: "spring", duration: 0.5 },
                 }}
               >
@@ -85,8 +88,13 @@ export default function Education() {
             </ListboxItem>
           )}
         </Listbox>
-      </section>
-      <section className="md:col-span-2 flex-col items-start ps-1">
+      </motion.div>
+      <motion.div
+        className="md:max-2xl:col-span-3 flex-col items-start ps-1"
+        initial={{ opacity: 0, x: -50 }}
+        transition={{ duration: 0.5 }}
+        whileInView={{ opacity: 1, x: 0 }}
+      >
         <div className="flex flex-col gap-12">
           <div className="flex flex-col">
             <span className="text-4xl font-extrabold">
@@ -99,11 +107,11 @@ export default function Education() {
               </p>
             </span>
           </div>
-          <div className="flex flex-row gap-8">
+          <div className="flex flex-row gap-8 w-max-[200px]">
             <Card
               isBlurred
               className={clsx(
-                "border-none bg-background/60 dark:bg-default-100/50 max-w-[610px]",
+                "border-none bg-background/60 dark:bg-default-100/50 w-auto max-sm:hidden self-center",
                 {
                   "bg-gradient-to-r from-green-500 to-green-800 shadow-lg shadow-green-600/50":
                     currentSchool!.graduated,
@@ -113,7 +121,7 @@ export default function Education() {
               )}
               shadow="sm"
             >
-              <CardBody>
+              <CardBody className="items-center w-full">
                 <FaUserGraduate className="text-8xl" />
               </CardBody>
             </Card>
@@ -154,12 +162,10 @@ export default function Education() {
               <HiInformationCircle />
               &nbsp;About this program
             </span>
-            <p className="text-medium text-justify">
-              {currentSchool!.description}
-            </p>
+            <p className="text-medium">{currentSchool!.description}</p>
           </div>
         </div>
-      </section>
+      </motion.div>
     </section>
   );
 }

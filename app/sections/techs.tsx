@@ -22,7 +22,7 @@ export default function Techs() {
               key={tech.name}
               animate={{
                 x: [
-                  (windowSize.width + 2 * nbTechs).toString() + "px",
+                  (windowSize.width + 5 * nbTechs).toString() + "px",
                   (nbTechs * -145).toString() + "px",
                 ],
               }}

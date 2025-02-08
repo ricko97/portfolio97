@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { Button, Card, CardFooter, Divider, Image } from "@heroui/react";
+import { Button, Divider, Image } from "@heroui/react";
 import NextLink from "next/link";
 import { motion } from "motion/react";
 import { useAnimation } from "framer-motion";
@@ -24,7 +24,7 @@ export default function Me() {
     >
       <motion.div
         animate={mainControls}
-        className="flex max-sm:flex-col flex-row items-center justify-between max-sm:gap-8 md:gap-16 lg:gap-16"
+        className="flex max-sm:flex-col flex-row items-center justify-between max-md:gap-8 md:max-2xl:gap-16"
         initial="hidden"
         transition={{
           type: "spring",
@@ -39,7 +39,7 @@ export default function Me() {
       >
         <div className="flex flex-col self-start w-full">
           <span className={title({ color: "blue" })}>{siteConfig.name}</span>
-          <span className={subtitle({ class: "mt-4 text-justify" })}>
+          <span className={subtitle({ class: "mt-4" })}>
             {siteConfig.intro}
           </span>
           <Button
@@ -49,19 +49,19 @@ export default function Me() {
             fullWidth={false}
             variant="shadow"
           >
-            <NextLink href={"/education"}>Lets get started</NextLink>
+            <NextLink href={"/#education"}>Lets get started</NextLink>
           </Button>
         </div>
         <Image
           alt={"Rick Lionel Onana"}
-          className="rounded-full shadow-inner-xl max-sm:hidden"
+          className="rounded-full shadow-inner-xl max-md:hidden"
           height="auto"
           src={"/img/me.jpeg"}
           width={500}
         />
         <Image
           alt={"Rick Lionel Onana"}
-          className="rounded-full shadow-inner-xl lg:hidden md:hidden"
+          className="rounded-full shadow-inner-xl md:max-2xl:hidden"
           height="auto"
           src={"/img/me.jpeg"}
           width={300}
