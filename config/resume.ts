@@ -11,7 +11,7 @@ export const resumeData = {
       },
       website: "https://www.collegeahuntsic.qc.ca",
       start_date: "2024-01-20",
-      end_date: "2025-01-20",
+      end_date: "2025-02-20",
       diploma: "Attestation of Collegial Studies",
       major: "Mobile Applications Development",
       minor: "",
@@ -25,6 +25,7 @@ export const resumeData = {
       location: "Montréal, Canada",
       media: [],
       graduated: false,
+      details: "Must complete an internship",
     },
     {
       id: "2",
@@ -52,6 +53,7 @@ export const resumeData = {
       location: "Tunis, Tunisia",
       media: [],
       graduated: true,
+      details: null,
     },
     {
       id: "3",
@@ -76,6 +78,17 @@ export const resumeData = {
       location: "Douala, Cameroon",
       media: [],
       graduated: true,
+      details: null,
+    },
+  ],
+  experience: [
+    {
+      title: "Rekap - Invoice and Warranty Management",
+      company: "Ahuntsic College",
+      date_range: "December 2021 - January 2025",
+      description:
+        "Centralize your warranties and invoices, receive expiration alerts and find your documents in an instant.",
+      tags: ["Ionic", "Typescript", "Vue", "Firebase"],
     },
   ],
 };

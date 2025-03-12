@@ -7,24 +7,24 @@ export const siteConfig = {
     "I’m a motivated junior developer focused on creating mobile apps for Android and iOS, as well as working on full-stack web development. Over the past few years, I’ve gained experience in building easy-to-use mobile apps and developing strong backend systems to support web applications.",
   navItems: [
     {
-      label: "Home",
-      href: "/#",
+      label: "Me",
+      href: "me",
     },
     {
       label: "Education",
-      href: "/#education",
+      href: "education",
     },
     {
       label: "Experience",
-      href: "/#experience",
+      href: "experience",
     },
     {
       label: "Skills",
-      href: "/#skills",
+      href: "skills",
     },
     {
       label: "Contact",
-      href: "/#contact",
+      href: "contact",
     },
   ],
   navMenuItems: [

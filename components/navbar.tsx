@@ -9,6 +9,7 @@ import {
   NavbarMenuItem,
 } from "@heroui/navbar";
 import { Link } from "@heroui/link";
+import { Link as SmoothLink, animateScroll as scroll } from "react-scroll";
 import NextLink from "next/link";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
@@ -19,6 +20,13 @@ import { GithubIcon, Logo, LinkedinIcon } from "@/components/icons";
 
 export const Navbar = () => {
   const pathname = usePathname();
+
+  const scrollToTop = () => {
+    scroll.scrollToTop({
+      duration: 800, // Animation duration in milliseconds
+      smooth: "easeIn", // Easing effect
+    });
+  };
 
   return (
     <HeroUINavbar maxWidth="xl" position="sticky">
@@ -32,15 +40,21 @@ export const Navbar = () => {
         <ul className="hidden md:flex lg:flex gap-4 justify-start ml-2">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
-              <NextLink
-                className={clsx("hover:underline", {
-                  "text-primary font-bold": pathname === item.href,
-                })}
-                color="foreground"
-                href={item.href}
-              >
-                {item.label}
-              </NextLink>
+              {item.href === "me" ? (
+                <Link style={{ cursor: "pointer" }} onPress={scrollToTop}>{item.label}</Link>
+              ) : (
+                <SmoothLink
+                  smooth
+                  className={clsx("hover:underline", {
+                    "text-primary font-bold": pathname === item.href,
+                  })}
+                  duration={500}
+                  style={{ cursor: "pointer" }}
+                  to={item.href}
+                >
+                  {item.label}
+                </SmoothLink>
+              )}
             </NavbarItem>
           ))}
         </ul>

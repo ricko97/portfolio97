@@ -23,6 +23,8 @@ import { Chip } from "@heroui/chip";
 
 import { resumeData } from "@/config/resume";
 import { formatMonthYear } from "@/config/utils";
+import { FaInfoCircle } from "react-icons/fa";
+import { TbInfoCircleFilled } from "react-icons/tb";
 
 export default function Education() {
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
@@ -36,13 +38,13 @@ export default function Education() {
 
   return (
     <section
-      className="grid md:max-2xl:grid-cols-5 max-md:gap-8 max-md:grid-rows-1 w-full md:max-2xl:gap-16 md:max-2xl:py-16"
+      className="grid md:grid-cols-5 max-md:gap-8 max-md:grid-rows-1 w-full md:max-2xl:gap-16 md:max-2xl:py-16"
       id="education"
     >
       <motion.div
-        className="px-1 md:max-2xl:col-span-2 h-fit"
+        className="px-1 md:col-span-2 h-fit"
         initial={{ opacity: 0, x: -50 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
         whileInView={{ opacity: 1, x: 0 }}
       >
         <Listbox
@@ -90,7 +92,7 @@ export default function Education() {
         </Listbox>
       </motion.div>
       <motion.div
-        className="md:max-2xl:col-span-3 flex-col items-start ps-1"
+        className="md:col-span-3 flex-col items-start ps-1"
         initial={{ opacity: 0, x: -50 }}
         transition={{ duration: 0.5 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -131,7 +133,7 @@ export default function Education() {
                 <Chip
                   className={clsx({
                     "text-green-600": currentSchool!.graduated,
-                    "text-yellow-400": !currentSchool!.graduated,
+                    "text-yellow-600": !currentSchool!.graduated,
                   })}
                   color="secondary"
                   startContent={
@@ -155,6 +157,14 @@ export default function Education() {
 
               <p className="text-small text-default-500 justify-self-end self-">{`${formatMonthYear(new Date(currentSchool!.start_date))} 
               - ${formatMonthYear(new Date(currentSchool!.end_date))}`}</p>
+
+              {currentSchool!.details != null ? (
+                <span className="text-small text-yellow-600 flex flex-row items-center">
+                  <TbInfoCircleFilled /> &nbsp;{currentSchool!.details}
+                </span>
+              ) : (
+                ""
+              )}
             </div>
           </div>
           <div className="flex flex-col gap-3">

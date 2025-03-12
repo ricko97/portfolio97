@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import { Button, Divider, Image } from "@heroui/react";
+import { Link as SmoothLink} from "react-scroll";
 import NextLink from "next/link";
 import { motion } from "motion/react";
 import { useAnimation } from "framer-motion";
@@ -19,7 +20,7 @@ export default function Me() {
 
   return (
     <section
-      className="flex flex-col items-center justify-center gap-4 pt-8 md:pt-10"
+      className="flex flex-col items-center justify-center gap-4 mt-8 md:mt-10"
       id="me"
     >
       <motion.div
@@ -49,7 +50,9 @@ export default function Me() {
             fullWidth={false}
             variant="shadow"
           >
-            <NextLink href={"/#education"}>Lets get started</NextLink>
+            <SmoothLink duration={800} to="education">
+              Lets get started
+            </SmoothLink>
           </Button>
         </div>
         <Image
@@ -61,7 +64,7 @@ export default function Me() {
         />
         <Image
           alt={"Rick Lionel Onana"}
-          className="rounded-full shadow-inner-xl md:max-2xl:hidden"
+          className="rounded-full shadow-inner-xl md:hidden"
           height="auto"
           src={"/img/me.jpeg"}
           width={300}
