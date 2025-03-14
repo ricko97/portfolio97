@@ -5,13 +5,15 @@ import React from "react";
 import Me from "@/app/sections/me";
 import Education from "@/app/sections/education";
 import Techs from "@/app/sections/techs";
+import Experience from "@/app/sections/experience";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center gap-4 px-2 py-8 md:py-10 overflow-x-hidden">
+    <main className="flex flex-col  justify-center gap-4 px-2 py-8 md:py-10 overflow-x-hidden">
       <Me />
       <Techs />
       <Education />
+      <Experience />
     </main>
   );
 }

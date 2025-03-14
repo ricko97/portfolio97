@@ -20,7 +20,7 @@ export default function Me() {
 
   return (
     <section
-      className="flex flex-col items-center justify-center gap-4 mt-8 md:mt-10"
+      className="flex flex-col items-center justify-center gap-4 mt-8 md:mt-4"
       id="me"
     >
       <motion.div
