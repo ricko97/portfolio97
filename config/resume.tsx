@@ -1,6 +1,4 @@
-import { FaVuejs } from "react-icons/fa";
-import { RiVuejsLine } from "react-icons/ri";
-import { MdSchool, MdWork } from "react-icons/md";
+import { MdWork } from "react-icons/md";
 import { IoGameController, IoLogoFigma, IoLogoReact } from "react-icons/io5";
 import { IoLogoIonic } from "react-icons/io";
 
@@ -27,11 +25,20 @@ export const resumeData = {
         "I learned and practiced several front-end frameworks and technologies in order to create " +
         "progressive and mobile applications. These studies brought me up to date on current technologies and " +
         "introduced me to mobile development, a sector I'm very passionate about.",
-      skills: ["Ionic", "Android Studio", "Swift/Xcode", "Vue"],
       location: "Montréal, Canada",
       media: [],
       graduated: false,
       details: "Must complete an internship",
+      courses: [
+        "Oriented-Object Programming",
+        "Swift/Xcode",
+        "Kotlin/Android Studio",
+        "Cross-Platform Apps",
+        "Progressive Web Apps",
+        "Server-side Programming",
+        "Mobile Apps Design",
+        "Nosql Databases/MongoDB",
+      ],
     },
     {
       id: "2",
@@ -55,11 +62,22 @@ export const resumeData = {
         "with an emphasis on infrastructure, network and data security. At the end of this program, " +
         "I was able to understand several important aspects of software development, such as data modeling, " +
         "object oriented and frameworks.",
-      skills: ["Java EE", "Android Studio", "Swift/Xcode", "Vue"],
       location: "Tunis, Tunisia",
       media: [],
       graduated: true,
       details: null,
+      courses: [
+        "C/C++",
+        "UML/OOP",
+        "SQL Databases",
+        "MVC Architecture/JavaEE",
+        "System and Network Programming",
+        "Advanced algorithms & cryptography",
+        "Web Applications Security",
+        "Network services and administration",
+        "CCNA Security",
+        "Virtualization & Security",
+      ],
     },
     {
       id: "3",
@@ -80,11 +98,19 @@ export const resumeData = {
       description:
         "My very first IT program equipped me with important IT and management skills. I learned algorithms and how to write my " +
         "first lines of code. I was also introduced to relational databases, operating systems and computer networks.",
-      skills: ["Java EE", "Android Studio", "Swift/Xcode", "Vue"],
       location: "Douala, Cameroon",
       media: [],
       graduated: true,
       details: null,
+      courses: [
+        "Data modeling",
+        "SQL Databases/Ms Access",
+        "Networking",
+        "Algorithms",
+        "Statistics & Probability",
+        "Computer Architecture",
+        "Office Technology",
+      ],
     },
   ],
   experience: [

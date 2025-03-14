@@ -1,13 +1,15 @@
+// eslint-disable-next-line import/order
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { resumeData } from "@/config/resume";
 
 import { useTheme } from "next-themes";
 import { Chip } from "@heroui/chip";
 import { Button, Divider } from "@heroui/react";
+
+import { resumeData } from "@/config/resume";
 import { title } from "@/components/primitives";
 
 export default function Experience() {

@@ -20,10 +20,10 @@ import { FaCircleCheck, FaClock, FaUserGraduate } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { Chip } from "@heroui/chip";
+import { TbInfoCircleFilled } from "react-icons/tb";
 
 import { resumeData } from "@/config/resume";
 import { formatMonthYear } from "@/config/utils";
-import { TbInfoCircleFilled } from "react-icons/tb";
 import { title } from "@/components/primitives";
 
 export default function Education() {
@@ -171,6 +171,20 @@ export default function Education() {
                 )}
               </div>
             </div>
+            <div className="flex flex-col gap-3">
+              <span className="text-xl font-bold flex flex-row items-center">
+                <HiInformationCircle />
+                &nbsp;Coursework
+              </span>
+              <div className="flex gap-2 flex-wrap">
+                {currentSchool!.courses.map((course) => (
+                  <Chip key={course} color="primary" variant="dot">
+                    {course}
+                  </Chip>
+                ))}
+              </div>
+            </div>
+
             <div className="flex flex-col gap-3">
               <span className="text-xl font-bold flex flex-row items-center">
                 <HiInformationCircle />
