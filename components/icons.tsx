@@ -208,3 +208,4 @@ export const IconArrowRightThick: React.FC<IconSvgProps> = (props) => {
     </svg>
   );
 };
+

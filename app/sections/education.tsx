@@ -37,6 +37,7 @@ export default function Education() {
   );
   const currentSchool = resumeData.education.find((x) => x.id == selectedValue);
 
+  // @ts-ignore
   return (
     <section id="education">
       <div className={"my-10 text-center"}>
@@ -107,8 +108,8 @@ export default function Education() {
               <span className="text-4xl font-extrabold">
                 {currentSchool!.school_long}
               </span>
-              <span className="flex flex-row items-center">
-                <IoLocationSharp className="text-lg text-default-500" />
+              <span className="flex flex-row items-center text-lg text-default-500">
+                <IoLocationSharp />
                 <p className="text-lg text-default-500">
                   {currentSchool!.location}
                 </p>
@@ -129,7 +130,7 @@ export default function Education() {
                 shadow="sm"
               >
                 <CardBody className="items-center w-full">
-                  <FaUserGraduate className="text-8xl" />
+                  {<FaUserGraduate className="text-8xl" />}
                 </CardBody>
               </Card>
               <div className="flex flex-col gap-2 font-bold justify-center">
