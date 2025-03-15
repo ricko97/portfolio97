@@ -14,7 +14,6 @@ import {
   ListboxItem,
   Image,
 } from "@heroui/react";
-import { MdLocationOn } from "react-icons/md";
 import { HiInformationCircle } from "react-icons/hi2";
 import { FaCircleCheck, FaClock, FaUserGraduate } from "react-icons/fa6";
 import { motion } from "framer-motion";
@@ -22,9 +21,11 @@ import clsx from "clsx";
 import { Chip } from "@heroui/chip";
 import { TbInfoCircleFilled } from "react-icons/tb";
 
+import { IoLocationSharp } from "react-icons/io5";
 import { resumeData } from "@/config/resume";
 import { formatMonthYear } from "@/config/utils";
 import { title } from "@/components/primitives";
+
 
 export default function Education() {
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
@@ -107,7 +108,7 @@ export default function Education() {
                 {currentSchool!.school_long}
               </span>
               <span className="flex flex-row items-center">
-                <MdLocationOn className="text-lg text-default-500" />
+                <IoLocationSharp className="text-lg text-default-500" />
                 <p className="text-lg text-default-500">
                   {currentSchool!.location}
                 </p>

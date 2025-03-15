@@ -19,9 +19,8 @@ export default function Me() {
   }, []);
 
   return (
-    <section
+    <div
       className="flex flex-col items-center justify-center gap-4 mt-8 md:mt-4"
-      id="me"
     >
       <motion.div
         animate={mainControls}
@@ -80,6 +79,6 @@ export default function Me() {
           My Stack
         </span>
       </div>
-    </section>
+    </div>
   );
 }

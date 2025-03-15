@@ -1,3 +1,7 @@
+import { FaUserTie } from "react-icons/fa6";
+import { IoMailSharp, IoSchool, IoSettingsSharp } from "react-icons/io5";
+import { MdWork } from "react-icons/md";
+
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
@@ -7,24 +11,29 @@ export const siteConfig = {
     "I’m a motivated junior developer focused on creating mobile apps for Android and iOS, as well as working on full-stack web development. Over the past few years, I’ve gained experience in building easy-to-use mobile apps and developing strong backend systems to support web applications.",
   navItems: [
     {
-      label: "Me",
+      label: "About Me",
       href: "me",
+      icon: <FaUserTie />,
     },
     {
       label: "Education",
       href: "education",
+      icon: <IoSchool />,
     },
     {
       label: "Experience",
       href: "experience",
+      icon: <MdWork />,
     },
     {
       label: "Skills",
       href: "skills",
+      icon: <IoSettingsSharp />,
     },
     {
       label: "Contact",
       href: "contact",
+      icon: <IoMailSharp />,
     },
   ],
   navMenuItems: [

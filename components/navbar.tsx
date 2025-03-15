@@ -30,41 +30,45 @@ export const Navbar = () => {
 
   return (
     <HeroUINavbar maxWidth="xl" position="sticky">
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo />
-            <p className="font-bold text-inherit">RLO</p>
-          </NextLink>
-        </NavbarBrand>
-        <ul className="hidden md:flex lg:flex gap-4 justify-start ml-2">
-          {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
-              {item.href === "me" ? (
-                <Link style={{ cursor: "pointer" }} onPress={scrollToTop}>{item.label}</Link>
-              ) : (
-                <SmoothLink
-                  smooth
-                  className={clsx("hover:underline", {
-                    "text-primary font-bold": pathname === item.href,
-                  })}
-                  duration={500}
-                  style={{ cursor: "pointer" }}
-                  to={item.href}
-                >
-                  {item.label}
-                </SmoothLink>
-              )}
-            </NavbarItem>
-          ))}
-        </ul>
-      </NavbarContent>
+      <NavbarBrand as="li" className="gap-3 max-w-fit">
+        <div className="flex justify-start items-center gap-1">
+          <Logo />
+          <p className="font-bold text-inherit">RLO</p>
+        </div>
+      </NavbarBrand>
+      <ul className="hidden md:flex lg:flex gap-4 justify-start ml-2">
+        {siteConfig.navItems.map((item) => (
+          <NavbarItem key={item.href}>
+            {item.href === "me" ? (
+              <Link
+                className={"cursor-pointer text-default-800"}
+                data-to-scrollspy-id={item.href}
+                onPress={scrollToTop}
+              >
+                <span className={"flex items-center"}>{item.icon}&nbsp;{item.label}</span>
+              </Link>
+            ) : (
+              <SmoothLink
+                smooth
+                className={clsx("cursor-pointer", {
+                  "text-primary font-bold": pathname === item.href,
+                })}
+                data-to-scrollspy-id={item.href}
+                duration={500}
+                to={item.href}
+              >
+                <span className={"flex items-center"}>{item.icon}&nbsp;{item.label}</span>
+              </SmoothLink>
+            )}
+          </NavbarItem>
+        ))}
+      </ul>
 
       <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
+        className="flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <NavbarItem className="hidden sm:flex gap-2">
+        <NavbarItem className="flex gap-2">
           <Link
             isExternal
             aria-label="LinkedIn"
@@ -79,34 +83,6 @@ export const Navbar = () => {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal aria-label="LinkedIn" href={siteConfig.links.linkedin}>
-          <LinkedinIcon className="text-default-500" />
-        </Link>
-        <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
-        </Link>
-        <ThemeSwitch />
-        <NavbarMenuToggle />
-      </NavbarContent>
-
-      <NavbarMenu>
-        <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <NextLink
-                className={clsx("hover:underline", {
-                  "text-primary font-bold": pathname === item.href,
-                })}
-                color="foreground"
-                href={item.href}
-              >
-                {item.label}
-              </NextLink>
-            </NavbarMenuItem>
-          ))}
-        </div>
-      </NavbarMenu>
     </HeroUINavbar>
   );
 };
