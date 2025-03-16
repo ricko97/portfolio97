@@ -11,7 +11,7 @@ import ScrollSpy from "react-ui-scrollspy";
 export default function Home() {
   return (
     <main className="flex flex-col justify-center gap-4 px-2 py-8 md:py-10 overflow-x-hidden">
-      <ScrollSpy>
+      <ScrollSpy offsetTop={50} scrollThrottle={100} updateHistoryStack={false}>
         <section id="me">
           <Me />
           <Techs />

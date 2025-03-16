@@ -86,3 +86,27 @@ export const Navbar = () => {
     </HeroUINavbar>
   );
 };
+
+
+
+export const BottomNavbar = () => {
+  return (
+    <nav className="md:hidden z-50 fixed bottom-0 w-full dark:bg-black bg-white shadow-md border-t border-default-100">
+      <div className="flex justify-around items-center py-2">
+        {siteConfig.navItems.map((item) => (
+          <SmoothLink
+            key={item.label}
+            smooth
+            className="flex flex-col items-center text-gray-500 hover:text-blue-500"
+            data-to-scrollspy-id={item.href}
+            duration={500}
+            to={item.href}
+          >
+            {item.bottomIcon}
+            <span className="text-xs">{item.label}</span>
+          </SmoothLink>
+        ))}
+      </div>
+    </nav>
+  );
+};

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-padding-top: 30%; /* height of your navbar */
+}
 
 .active-scroll-spy {
     color: #0072F5;

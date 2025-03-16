@@ -14,26 +14,31 @@ export const siteConfig = {
       label: "About Me",
       href: "me",
       icon: <FaUserTie />,
+      bottomIcon: <FaUserTie size={24} />,
     },
     {
       label: "Education",
       href: "education",
       icon: <IoSchool />,
+      bottomIcon: <IoSchool size={24} />,
     },
     {
       label: "Experience",
       href: "experience",
       icon: <MdWork />,
+      bottomIcon: <MdWork size={24} />,
     },
     {
       label: "Skills",
       href: "skills",
       icon: <IoSettingsSharp />,
+      bottomIcon: <IoSettingsSharp size={24} />,
     },
     {
       label: "Contact",
       href: "contact",
       icon: <IoMailSharp />,
+      bottomIcon: <IoMailSharp size={24} />,
     },
   ],
   navMenuItems: [
