@@ -1,9 +1,8 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
-import { Link } from "@heroui/link";
 import clsx from "clsx";
-
 import React from "react";
+
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
@@ -46,24 +45,11 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
-            <main className="container mx-auto max-w-7xl pt-4 px-6 flex-grow">
+            <main className="container mx-auto max-w-7xl pt-4 flex-grow">
               <Navbar />
               {children}
+              <BottomNavbar />
             </main>
-            <BottomNavbar />
-            <footer className="w-full flex items-center justify-center py-3">
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://www.heroui.com/"
-                title="heroui.com homepage"
-              >
-                <span className="text-default-600">
-                  Built from scratch with
-                </span>
-                <p className="text-primary">HeroUI</p>
-              </Link>
-            </footer>
           </div>
         </Providers>
       </body>

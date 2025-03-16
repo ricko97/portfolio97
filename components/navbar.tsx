@@ -2,15 +2,11 @@
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
-  NavbarMenu,
-  NavbarMenuToggle,
   NavbarBrand,
   NavbarItem,
-  NavbarMenuItem,
 } from "@heroui/navbar";
 import { Link } from "@heroui/link";
 import { Link as SmoothLink, animateScroll as scroll } from "react-scroll";
-import NextLink from "next/link";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
@@ -45,7 +41,9 @@ export const Navbar = () => {
                 data-to-scrollspy-id={item.href}
                 onPress={scrollToTop}
               >
-                <span className={"flex items-center"}>{item.icon}&nbsp;{item.label}</span>
+                <span className={"flex items-center"}>
+                  {item.icon}&nbsp;{item.label}
+                </span>
               </Link>
             ) : (
               <SmoothLink
@@ -57,17 +55,16 @@ export const Navbar = () => {
                 duration={500}
                 to={item.href}
               >
-                <span className={"flex items-center"}>{item.icon}&nbsp;{item.label}</span>
+                <span className={"flex items-center"}>
+                  {item.icon}&nbsp;{item.label}
+                </span>
               </SmoothLink>
             )}
           </NavbarItem>
         ))}
       </ul>
 
-      <NavbarContent
-        className="flex basis-1/5 sm:basis-full"
-        justify="end"
-      >
+      <NavbarContent className="flex basis-1/5 sm:basis-full" justify="end">
         <NavbarItem className="flex gap-2">
           <Link
             isExternal
@@ -82,12 +79,9 @@ export const Navbar = () => {
           <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
-
     </HeroUINavbar>
   );
 };
-
-
 
 export const BottomNavbar = () => {
   return (
