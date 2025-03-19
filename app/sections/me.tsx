@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { Button, Divider, Image } from "@heroui/react";
-import { Link as SmoothLink} from "react-scroll";
+import { Button, Divider, Image, Link } from "@heroui/react";
 import { motion } from "motion/react";
 import { useAnimation } from "framer-motion";
+import { MdDownload } from "react-icons/md";
+import { GrValidate } from "react-icons/gr";
 
 import { title, subtitle } from "@/components/primitives";
-import { IconArrowRightThick } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 
 export default function Me() {
@@ -18,9 +18,7 @@ export default function Me() {
   }, []);
 
   return (
-    <div
-      className="flex flex-col items-center justify-center mx-3 gap-4 mt-8 md:mt-4"
-    >
+    <div className="flex flex-col items-center justify-center mx-3 gap-4 mt-8 md:mt-4">
       <motion.div
         animate={mainControls}
         className="flex max-sm:flex-col flex-row items-center justify-between max-md:gap-8 md:max-2xl:gap-16"
@@ -41,17 +39,32 @@ export default function Me() {
           <span className={subtitle({ class: "mt-4" })}>
             {siteConfig.intro}
           </span>
-          <Button
-            className={"mt-4 text-xl md:w-2/3 lg:w-1/3"}
-            color="primary"
-            endContent={<IconArrowRightThick />}
-            fullWidth={false}
-            variant="shadow"
-          >
-            <SmoothLink duration={800} to="education">
-              Lets get started
-            </SmoothLink>
-          </Button>
+          <div className="flex justify-start gap-3 mt-8">
+            <Link
+              isExternal
+              className={"text-xl "}
+              href={"/files/LionelOnana_resume.pdf"}
+            >
+              <Button
+                color="primary"
+                endContent={<MdDownload />}
+                fullWidth={false}
+                variant="shadow"
+              >
+                Download
+              </Button>
+            </Link>
+            <Link className={"text-xl "} href={"mailto:oricklionel@gmail.com"}>
+              <Button
+                color="danger"
+                endContent={<GrValidate />}
+                fullWidth={false}
+                variant="shadow"
+              >
+                Hire me
+              </Button>
+            </Link>
+          </div>
         </div>
         <Image
           alt={"Rick Lionel Onana"}
