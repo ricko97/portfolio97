@@ -8,7 +8,10 @@ export const siteConfig = {
   name: "Rick Lionel ONANA",
   description: "Junior Android, IOs & Fullstack Developer",
   intro:
-    "I’m a motivated junior developer focused on creating mobile apps for Android and iOS, as well as working on full-stack web development. Over the past few years, I’ve gained experience in building easy-to-use mobile apps and developing strong backend systems to support web applications.",
+    "I’m a motivated junior developer focused on creating mobile apps for Android and iOS, as well as working on full-stack web development. " +
+    "Over the past few years, I’ve gained experience in building easy-to-use mobile apps and developing strong backend systems to support web " +
+    "applications.\n\nAdditionally, I’m a cybersecurity enthusiast with a passion for web application security, constantly exploring ways to build safer, " +
+    "more resilient digital experiences.",
   navItems: [
     {
       label: "About Me",
