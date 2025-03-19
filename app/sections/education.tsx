@@ -43,7 +43,7 @@ export default function Education() {
       <div className={"my-10 text-center"}>
         <h1 className={title({ color: "blue" })}>Education</h1>
         <p className={"text-gray-700 dark:text-white"}>
-          My previous qualifications and coursework.
+          My previous qualifications and coursework
         </p>
       </div>
       <div className="grid md:grid-cols-5 max-md:gap-8 max-md:grid-rows-1 w-full md:gap-16 md:py-16">

@@ -19,10 +19,10 @@ export default function Experience() {
   return (
     <section id="experience">
       <Divider className={"justify-center"} orientation={"horizontal"} />
-      <div className={"mt-10 mb-20 text-center"}>
+      <div className={"my-10 text-center"}>
         <h1 className={title({ color: "blue" })}>Projects & Experience</h1>
         <p className={"text-gray-700 dark:text-white"}>
-          Showcase of my latest works, projects and developments.
+          Showcase of my latest works, projects and developments
         </p>
       </div>
       <VerticalTimeline lineColor={"grey"}>

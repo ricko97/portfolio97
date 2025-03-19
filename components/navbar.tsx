@@ -35,31 +35,22 @@ export const Navbar = () => {
       <ul className="hidden md:flex lg:flex gap-4 justify-start ml-2">
         {siteConfig.navItems.map((item) => (
           <NavbarItem key={item.href}>
-            {item.href === "me" ? (
-              <Link
-                className={"cursor-pointer text-default-800"}
-                data-to-scrollspy-id={item.href}
-                onPress={scrollToTop}
-              >
-                <span className={"flex items-center"}>
-                  {item.icon}&nbsp;{item.label}
-                </span>
-              </Link>
-            ) : (
-              <SmoothLink
-                smooth
-                className={clsx("cursor-pointer", {
-                  "text-primary font-bold": pathname === item.href,
-                })}
-                data-to-scrollspy-id={item.href}
-                duration={500}
-                to={item.href}
-              >
-                <span className={"flex items-center"}>
-                  {item.icon}&nbsp;{item.label}
-                </span>
-              </SmoothLink>
-            )}
+            <SmoothLink
+              smooth
+              activeClass={"active-scroll-spy"}
+              className={clsx("cursor-pointer", {
+                "text-primary font-bold": pathname === item.href,
+              })}
+              data-to-scrollspy-id={item.href}
+              duration={500}
+              offset={-40}
+              spy={true}
+              to={item.href}
+            >
+              <span className={"flex items-center"}>
+                {item.icon}&nbsp;{item.label}
+              </span>
+            </SmoothLink>
           </NavbarItem>
         ))}
       </ul>
@@ -91,9 +82,12 @@ export const BottomNavbar = () => {
           <SmoothLink
             key={item.label}
             smooth
+            activeClass={"active-scroll-spy"}
             className="flex flex-col items-center text-gray-500 hover:text-blue-500"
             data-to-scrollspy-id={item.href}
             duration={500}
+            offset={-40}
+            spy={true}
             to={item.href}
           >
             {item.bottomIcon}

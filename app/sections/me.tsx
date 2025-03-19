@@ -3,7 +3,6 @@
 import React, { useEffect } from "react";
 import { Button, Divider, Image } from "@heroui/react";
 import { Link as SmoothLink} from "react-scroll";
-import NextLink from "next/link";
 import { motion } from "motion/react";
 import { useAnimation } from "framer-motion";
 
@@ -20,7 +19,7 @@ export default function Me() {
 
   return (
     <div
-      className="flex flex-col items-center justify-center gap-4 mt-8 md:mt-4"
+      className="flex flex-col items-center justify-center mx-3 gap-4 mt-8 md:mt-4"
     >
       <motion.div
         animate={mainControls}
