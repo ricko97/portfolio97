@@ -28,7 +28,7 @@ export const resumeData = {
       location: "Montréal, Canada",
       media: [],
       graduated: false,
-      details: "Must complete an internship",
+      details: "Looking for an internship",
       courses: [
         "Oriented-Object Programming",
         "Swift/Xcode",

@@ -98,7 +98,7 @@ export default function Education() {
           </Listbox>
         </motion.div>
         <motion.div
-          className="md:col-span-3 flex-col items-start ps-1"
+          className="md:col-span-3 flex-col items-start px-4"
           initial={{ opacity: 0, x: -50 }}
           transition={{ duration: 0.5 }}
           whileInView={{ opacity: 1, x: 0 }}

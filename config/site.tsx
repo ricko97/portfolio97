@@ -10,7 +10,7 @@ export const siteConfig = {
   intro:
     "I’m a motivated junior developer focused on creating mobile apps for Android and iOS, as well as working on full-stack web development. " +
     "Over the past few years, I’ve gained experience in building easy-to-use mobile apps and developing strong backend systems to support web " +
-    "applications.\n\nAdditionally, I’m a cybersecurity enthusiast with a passion for web application security, constantly exploring ways to build safer, " +
+    "applications.\nAdditionally, I’m a cybersecurity enthusiast with an interest for web application security, constantly exploring ways to build safer, " +
     "more resilient digital experiences.",
   navItems: [
     {

@@ -37,7 +37,11 @@ export default function Me() {
         <div className="flex flex-col self-start w-full">
           <span className={title({ color: "blue" })}>{siteConfig.name}</span>
           <span className={subtitle({ class: "mt-4" })}>
-            {siteConfig.intro}
+            {siteConfig.intro.split("\n").map((s, index) => (
+              <p key={index} className={"py-2"}>
+                {s}
+              </p>
+            ))}
           </span>
           <div className="flex justify-start gap-3 mt-8">
             <Link
