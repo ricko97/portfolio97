@@ -20,12 +20,11 @@ import { motion } from "framer-motion";
 import clsx from "clsx";
 import { Chip } from "@heroui/chip";
 import { TbInfoCircleFilled } from "react-icons/tb";
-
 import { IoLocationSharp } from "react-icons/io5";
+
 import { resumeData } from "@/config/resume";
 import { formatMonthYear } from "@/config/utils";
 import { title } from "@/components/primitives";
-
 
 export default function Education() {
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
@@ -164,7 +163,7 @@ export default function Education() {
                 <p className="text-small text-default-500 justify-self-end self-">{`${formatMonthYear(new Date(currentSchool!.start_date))} 
               - ${formatMonthYear(new Date(currentSchool!.end_date))}`}</p>
 
-                {currentSchool!.details != null ? (
+                {currentSchool!.details != null && !currentSchool!.graduated ? (
                   <span className="text-small text-yellow-600 flex flex-row items-center">
                     <TbInfoCircleFilled /> &nbsp;{currentSchool!.details}
                   </span>

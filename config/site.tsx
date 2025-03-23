@@ -6,12 +6,20 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Rick Lionel ONANA",
-  description: "Junior Android, IOs & Fullstack Developer",
+  description: "Junior Android, iOS & Fullstack Developer",
   intro:
     "I’m a motivated junior developer focused on creating mobile apps for Android and iOS, as well as working on full-stack web development. " +
     "Over the past few years, I’ve gained experience in building easy-to-use mobile apps and developing strong backend systems to support web " +
     "applications.\nAdditionally, I’m a cybersecurity enthusiast with an interest for web application security, constantly exploring ways to build safer, " +
     "more resilient digital experiences.",
+  summary:
+    "Hello! I hope you enjoyed using this website and found it easy to navigate. I’d really appreciate it if you could leave a review, " +
+    "as I’m always looking to improve. Feel free to contact me with any questions or job opportunities.",
+  contact: {
+    phone: "+1 343 597 0221",
+    email: "oricklionel@gmail.com",
+    location: "Montréal, Canada",
+  },
   navItems: [
     {
       label: "About Me",

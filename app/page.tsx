@@ -6,10 +6,9 @@ import Me from "@/app/sections/me";
 import Education from "@/app/sections/education";
 import Techs from "@/app/sections/techs";
 import Experience from "@/app/sections/experience";
-import ScrollSpy from "react-ui-scrollspy";
-import { BottomNavbar, Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
-import { Skills } from "@/app/sections/skills";
+import Footer from "@/components/footer";
+import Skills from "@/app/sections/skills";
+import Contact from "@/app/sections/contact";
 
 export default function Home() {
   return (
@@ -21,6 +20,7 @@ export default function Home() {
       <Education />
       <Experience />
       <Skills />
+      <Contact />
       <Footer />
     </main>
   );

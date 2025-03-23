@@ -13,7 +13,7 @@ import { title } from "@/components/primitives";
 import { resumeData } from "@/config/resume";
 import { motion } from "framer-motion";
 
-export const Skills = () => {
+export default function Skills(){
   return (
     <section id="skills">
       <Divider className={"justify-center mt-10"} orientation={"horizontal"} />

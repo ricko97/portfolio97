@@ -1,9 +1,9 @@
 import { Link } from "@heroui/link";
 import React from "react";
 
-export const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="w-full flex items-center justify-center py-6">
+    <footer className="w-full flex items-center justify-center max-md:py-8 py-1">
       <Link
         isExternal
         className="flex items-center gap-1 text-current"
@@ -15,4 +15,4 @@ export const Footer = () => {
       </Link>
     </footer>
   );
-};
+}
