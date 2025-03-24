@@ -5,15 +5,16 @@ import { Form } from "@heroui/form";
 import { FaLocationDot, FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { IoIosSend } from "react-icons/io";
+import { addToast } from "@heroui/toast";
 
 import { siteConfig } from "@/config/site";
 import { title } from "@/components/primitives";
-import { validateEmail, validatePhoneNumber } from "@/config/utils";
+import { sendEmail, validateEmail, validatePhoneNumber } from "@/config/utils";
 
 export default function Contact() {
   const [errors, setErrors] = React.useState({});
   const validationErr = {};
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.currentTarget));
 
@@ -50,9 +51,23 @@ export default function Contact() {
 
       return;
     } else {
-
+      sendEmail(data)
+        .then((result) => {
+          addToast({
+            title: "Thank you",
+            description: "Your message has been successfully sent.",
+            color: "success",
+          });
+          e.currentTarget.reset();
+        })
+        .catch((err) => {
+          addToast({
+            title: "Sorry",
+            description: "An error occurred, please try again later.",
+            color: "danger",
+          });
+        });
     }
-
   };
 
   return (
