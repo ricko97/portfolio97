@@ -93,7 +93,7 @@ export default function Contact() {
             validationErrors={errors}
             onSubmit={onSubmit}
           >
-            <div className="flex gap-4 w-full">
+            <div className="flex max-sm:flex-col gap-4 max-sm:gap-8 w-full">
               <Input
                 isRequired
                 aria-label="Your name"
