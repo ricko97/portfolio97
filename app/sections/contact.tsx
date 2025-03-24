@@ -9,74 +9,37 @@ import { addToast } from "@heroui/toast";
 
 import { siteConfig } from "@/config/site";
 import { title } from "@/components/primitives";
-import { validateEmail, validatePhoneNumber } from "@/config/utils";
 
 export default function Contact() {
-  const [errors, setErrors] = React.useState({});
-  const validationErr = {};
+  const [errors] = React.useState({});
   const onSubmit = async (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.currentTarget));
 
-    if (data.email.length < 1) {
-      validationErr["email"] = "Email is required";
-    } else if (!validateEmail(data.email as string) || !data.email) {
-      validationErr["email"] = "Enter a valid email address";
-    }
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-    if (data.name.length < 1) {
-      validationErr["name"] = "Name is required";
-    } else if (data.name.length < 3) {
-      validationErr["name"] = "Name must be at least 3 characters long";
-    }
+      //const resBody = await res.json();
 
-    if (data.phone && !validatePhoneNumber(data.phone as string)) {
-      validationErr["phone"] = "Enter a valid phone number";
-    }
-
-    if (data.subject.length < 1) {
-      validationErr["subject"] = "Subject is required";
-    } else if (data.subject.length < 10) {
-      validationErr["subject"] = "Subject must be at least 10 characters long";
-    }
-
-    if (data.message.length < 1) {
-      validationErr["message"] = "Message is required";
-    } else if (data.message.length < 20) {
-      validationErr["message"] = "Message must be at least 20 characters long";
-    }
-
-    if (Object.keys(validationErr).length > 0) {
-      setErrors(validationErr);
-
-      return;
-    } else {
-      try {
-        const res = await fetch("/api/send", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
+      if (res.status === 200) {
+        addToast({
+          title: "Thank you",
+          description: "Your message has been successfully sent.",
+          color: "success",
         });
-
-        //const resBody = await res.json();
-
-        if (res.status === 200) {
-          addToast({
-            title: "Thank you",
-            description: "Your message has been successfully sent.",
-            color: "success",
-          });
-          e.currentTarget.reset();
-        } else {
-          addToast({
-            title: "Sorry",
-            description: "An error occurred, please try again later.",
-            color: "danger",
-          });
-        }
-      } catch (error) {
+        e.target.reset();
+      } else {
+        addToast({
+          title: "Sorry",
+          description: "An error occurred, please try again later.",
+          color: "danger",
+        });
       }
-    }
+    } catch (error) {}
   };
 
   return (
@@ -137,6 +100,7 @@ export default function Contact() {
                 className="w-full"
                 description=""
                 label="Name"
+                minLength={3}
                 name="name"
                 type="text"
               />
@@ -144,8 +108,10 @@ export default function Contact() {
                 aria-label="Phone number"
                 className="w-full"
                 description="Include your country code (e.g., +1 XXXXXXXX)"
+                errorMessage="Please enter a valid phone number with country code."
                 label="Phone Number"
                 name="phone"
+                pattern="^\+\d{1,4}\s\d{6,15}$"
                 type="tel"
               />
             </div>
@@ -165,6 +131,7 @@ export default function Contact() {
               className="w-full"
               description=""
               label="Subject"
+              minLength={10}
               name="subject"
               type="text"
             />
@@ -175,6 +142,7 @@ export default function Contact() {
               aria-label="Message"
               className="w-full"
               label="Message"
+              minLength={20}
               name="message"
               // eslint-disable-next-line no-console
               onClear={() => console.log("textarea cleared")}

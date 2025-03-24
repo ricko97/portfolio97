@@ -2,7 +2,7 @@ import { Resend } from "resend";
 
 import EmailTemplate from "@/components/email-template";
 
-const resend = new Resend("re_KkXBPnq9_CYRYZ8XTGZSsSnyb845fnNZ9");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   const emailData = await req.json();
