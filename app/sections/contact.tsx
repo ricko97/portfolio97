@@ -58,7 +58,7 @@ export default function Contact() {
           body: JSON.stringify(data),
         });
 
-        const resBody = await res.json();
+        //const resBody = await res.json();
 
         if (res.status === 200) {
           addToast({
@@ -70,16 +70,11 @@ export default function Contact() {
         } else {
           addToast({
             title: "Sorry",
-            description: resBody["message"],
+            description: "An error occurred, please try again later.",
             color: "danger",
           });
         }
       } catch (error) {
-        addToast({
-          title: "Sorry",
-          description: "An error occurred, please try again later.",
-          color: "danger",
-        });
       }
     }
   };

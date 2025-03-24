@@ -2,12 +2,12 @@ import { Resend } from "resend";
 
 import EmailTemplate from "@/components/email-template";
 
-const resend = new Resend("re_ EUaKwCLb_2vC286AtefxnAwWrJJJHvQA8");
+const resend = new Resend("re_KkXBPnq9_CYRYZ8XTGZSsSnyb845fnNZ9");
 
 export async function POST(req: Request) {
   const emailData = await req.json();
   const { data, error } = await resend.emails.send({
-    from: "Portfolio <contact@ricklionelonana.me>",
+    from: "From My Portfolio <contact@ricklionelonana.me>",
     to: ["oricklionel@gmail.com"],
     subject: emailData["subject"],
     react: EmailTemplate(emailData),
