@@ -9,7 +9,7 @@ import { addToast } from "@heroui/toast";
 
 import { siteConfig } from "@/config/site";
 import { title } from "@/components/primitives";
-import { sendEmail, validateEmail, validatePhoneNumber } from "@/config/utils";
+import { validateEmail, validatePhoneNumber } from "@/config/utils";
 
 export default function Contact() {
   const [errors, setErrors] = React.useState({});
@@ -51,22 +51,36 @@ export default function Contact() {
 
       return;
     } else {
-      sendEmail(data)
-        .then((result) => {
+      try {
+        const res = await fetch("/api/send", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        const resBody = await res.json();
+
+        if (res.status === 200) {
           addToast({
             title: "Thank you",
             description: "Your message has been successfully sent.",
             color: "success",
           });
           e.currentTarget.reset();
-        })
-        .catch((err) => {
+        } else {
           addToast({
             title: "Sorry",
-            description: "An error occurred, please try again later.",
+            description: resBody["message"],
             color: "danger",
           });
+        }
+      } catch (error) {
+        addToast({
+          title: "Sorry",
+          description: "An error occurred, please try again later.",
+          color: "danger",
         });
+      }
     }
   };
 
