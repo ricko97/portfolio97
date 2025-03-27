@@ -107,7 +107,7 @@ export default function Contact() {
               <Input
                 aria-label="Phone number"
                 className="w-full"
-                description="Include your country code (e.g., +1 XXXXXXXX)"
+                description="Include your country code (e.g., +1 XXXX)"
                 errorMessage="Please enter a valid phone number with country code."
                 label="Phone Number"
                 name="phone"
