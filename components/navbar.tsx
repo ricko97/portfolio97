@@ -6,30 +6,29 @@ import {
   NavbarItem,
 } from "@heroui/navbar";
 import { Link } from "@heroui/link";
-import { Link as SmoothLink, animateScroll as scroll } from "react-scroll";
+import { Link as SmoothLink } from "react-scroll";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import { Image } from "@heroui/react";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { GithubIcon, Logo, LinkedinIcon } from "@/components/icons";
+import { GithubIcon, LinkedinIcon } from "@/components/icons";
 
 export const Navbar = () => {
   const pathname = usePathname();
-
-  const scrollToTop = () => {
-    scroll.scrollToTop({
-      duration: 800, // Animation duration in milliseconds
-      smooth: "easeIn", // Easing effect
-    });
-  };
 
   return (
     <HeroUINavbar maxWidth="xl" position="sticky">
       <NavbarBrand as="li" className="gap-3 max-w-fit">
         <div className="flex justify-start items-center gap-1">
-          <Logo />
-          <p className="font-bold text-inherit">RLO</p>
+          <Image
+            alt={"logo"}
+            className="rounded-full"
+            height={40}
+            src={"/rlo.png"}
+            width={40}
+          />
         </div>
       </NavbarBrand>
       <ul className="hidden md:flex lg:flex gap-4 justify-start ml-2">
