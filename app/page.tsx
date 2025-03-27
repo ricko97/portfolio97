@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 import Me from "@/app/sections/me";
 import Education from "@/app/sections/education";
 import Techs from "@/app/sections/techs";

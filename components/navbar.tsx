@@ -82,7 +82,7 @@ export const BottomNavbar = () => {
             key={item.label}
             smooth
             activeClass={"active-scroll-spy"}
-            className="flex flex-col items-center text-gray-500 hover:text-blue-500"
+            className="flex flex-col items-center text-gray-500 hover:text-blue-500 cursor-pointer"
             data-to-scrollspy-id={item.href}
             duration={500}
             offset={-40}
