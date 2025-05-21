@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "Rick Lionel Onana Website",
     start_url: "/",
     display: "standalone",
-    background_color: "",
+    background_color: "transparent",
     theme_color: "#000000",
     icons: [
       {

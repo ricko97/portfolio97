@@ -107,11 +107,11 @@ export default function Contact() {
               <Input
                 aria-label="Phone number"
                 className="w-full"
-                description="Include your country code (e.g., +1 XXXX)"
+                description="Include your country code (e.g., +1XXXX)"
                 errorMessage="Please enter a valid phone number with country code."
                 label="Phone Number"
                 name="phone"
-                pattern="^\+\d{1,4}\s\d{6,15}$"
+                pattern="^\+1\(?\d{3}\)?\d{3}-?\d{4}$"
                 type="tel"
               />
             </div>

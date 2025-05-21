@@ -74,14 +74,14 @@ export default function Me() {
           alt={"Rick Lionel Onana"}
           className="rounded-full shadow-inner-xl max-md:hidden"
           height="auto"
-          src={"/img/me.jpeg"}
+          src={"/img/me_2.jpg"}
           width={500}
         />
         <Image
           alt={"Rick Lionel Onana"}
           className="rounded-full shadow-inner-xl md:hidden"
           height="auto"
-          src={"/img/me.jpeg"}
+          src={"/img/me_2.jpg"}
           width={300}
         />
       </motion.div>

@@ -8,10 +8,10 @@ import {
   ScrollShadow,
 } from "@heroui/react";
 import { Chip } from "@heroui/chip";
+import { motion } from "framer-motion";
 
 import { title } from "@/components/primitives";
 import { resumeData } from "@/config/resume";
-import { motion } from "framer-motion";
 
 export default function Skills(){
   return (

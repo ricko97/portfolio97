@@ -28,7 +28,7 @@ export const resumeData = {
       location: "Montréal, Canada",
       media: [],
       graduated: false,
-      details: "Looking for an internship",
+      details: "Urgent search for internship",
       courses: [
         "Oriented-Object Programming",
         "Swift/Xcode",
@@ -51,7 +51,7 @@ export const resumeData = {
       },
       website: "https://esprit.tn",
       start_date: "2017-10-01",
-      end_date: "2020-08-01",
+      end_date: "2021-11-01",
       diploma: "Engineering Degree",
       major: "Software Engineering",
       minor: "Network, Infrastructure & Data Security",
