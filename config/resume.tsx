@@ -31,9 +31,9 @@ export const resumeData = {
       details: "Urgent search for internship",
       courses: [
         "Oriented-Object Programming",
-        "Swift/Xcode",
-        "Kotlin/Android Studio",
-        "Cross-Platform Apps",
+        "IOS Development - Swift/Xcode",
+        "Android Development - Kotlin/Jetpack",
+        "Frontend/Cross-Platform Techs",
         "Progressive Web Apps",
         "Server-side Programming",
         "Mobile Apps Design",
