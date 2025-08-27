@@ -8,13 +8,13 @@ interface EmailTemplateProps {
   message: string;
 }
 
-const EmailTemplate: React.FC<EmailTemplateProps> = ({
+export default function EmailTemplate({
   name,
   phone,
   email,
   subject,
   message,
-}) => {
+}: EmailTemplateProps) {
   return (
     <div
       style={{
@@ -41,6 +41,4 @@ const EmailTemplate: React.FC<EmailTemplateProps> = ({
       <p style={{ color: "#333" }}>{message}</p>
     </div>
   );
-};
-
-export default EmailTemplate;
+}

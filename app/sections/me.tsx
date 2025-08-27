@@ -21,7 +21,7 @@ export default function Me() {
     <div className="flex flex-col items-center justify-center mx-3 gap-4 mt-8 md:mt-4">
       <motion.div
         animate={mainControls}
-        className="flex max-sm:flex-col flex-row items-center justify-between max-md:gap-8 md:max-2xl:gap-16"
+        className="flex max-sm:flex-col flex-row items-center gap-16 justify-between max-md:gap-8 md:max-2xl:gap-16"
         initial="hidden"
         transition={{
           type: "spring",
@@ -34,7 +34,7 @@ export default function Me() {
           visible: { opacity: 1, y: 0 },
         }}
       >
-        <div className="flex flex-col self-start w-full">
+        <div className="flex flex-col self-start w-2/3">
           <span className={title({ color: "blue" })}>{siteConfig.name}</span>
           <span className={subtitle({ class: "mt-4" })}>
             {siteConfig.intro.split("\n").map((s, index) => (
@@ -72,15 +72,17 @@ export default function Me() {
         </div>
         <Image
           alt={"Rick Lionel Onana"}
-          className="rounded-full shadow-inner-xl max-md:hidden"
-          height="auto"
+          className="rounded-full object-cover shadow-inner-xl max-md:hidden"
+          height={350}
           src={"/img/me_2.jpg"}
-          width={500}
+          width={350}
         />
+
+
         <Image
           alt={"Rick Lionel Onana"}
-          className="rounded-full shadow-inner-xl md:hidden"
-          height="auto"
+          className="rounded-full object-cover shadow-inner-xl md:hidden"
+          height={300}
           src={"/img/me_2.jpg"}
           width={300}
         />
