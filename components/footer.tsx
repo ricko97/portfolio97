@@ -10,7 +10,9 @@ export default function Footer() {
         href="https://www.heroui.com/"
         title="heroui.com homepage"
       >
-        <span className="text-default-600">Built from scratch with</span>
+        <span className="text-default-600">
+          Built from scratch with Next.Js &
+        </span>
         <p className="text-primary">HeroUI</p>
       </Link>
     </footer>

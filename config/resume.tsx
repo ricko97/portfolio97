@@ -258,7 +258,7 @@ export const resumeData = {
       id: 2,
       name: "Backend Development",
       image: "/img/skills/backend_dev.png",
-      rate: 70,
+      rate: 75,
       details: [
         "Proficiency in languages like Java, PHP, or Node.js",
         "Expertise with relational databases and NoSQL databases",
@@ -279,7 +279,7 @@ export const resumeData = {
       id: 3,
       name: "Mobile App Development",
       image: "/img/skills/mobile_dev.png",
-      rate: 55,
+      rate: 70,
       details: [
         "Build Native IOS and Android applications",
         "Knowledge of cross-platform frameworks like Ionic & React Native",
@@ -302,7 +302,7 @@ export const resumeData = {
       id: 4,
       name: "Web Application Security",
       image: "/img/skills/web_sec.png",
-      rate: 50,
+      rate: 60,
       details: [
         "Knowledge of OWASP Top 10 vulnerabilities and secure coding practices",
         "Working with vulnerability scanners to identify and exploit vulnerabilities",
